@@ -1,0 +1,25 @@
+@import "../../../styles.scss";
+
+.main
+{
+  background-color: rgba(32, 32, 32, 0.582);
+  color: white;
+  max-width: $mobilebreak;
+  scroll-behavior: smooth;
+}
+
+.component
+{
+  max-width: $mobilebreak;
+}
+
+
+.spacer
+{
+  height: 50vh;
+}
+
+hr
+{
+  margin: 11% 0;
+}

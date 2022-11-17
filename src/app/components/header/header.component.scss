@@ -1,0 +1,43 @@
+@import "../../../styles.scss";
+
+.navbar
+{
+  background-color: $darkblack;
+  width: 100%;
+}
+
+.nav-container
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  max-width: $mobilebreak;
+  margin: auto
+}
+
+.navbar-collapse
+{
+  flex-grow: 0;
+}
+
+.navbar, .navbar-brand, .nav-link, .menu-button
+{
+  color: white !important;
+}
+
+.logo
+{
+ width: 32px;
+}
+
+.menu-button
+{
+  background: none !important;
+  border-style: none;
+}
+
+.sidebar
+{
+  background-color: rgba(22, 22, 22, 0.868);
+}
