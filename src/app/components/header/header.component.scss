@@ -54,3 +54,18 @@
 {
   background-color: rgba(22, 22, 22, 0.868);
 }
+
+a:hover
+{
+  transition: text-shadow 0.225s;
+  text-shadow: white 1px 1px 4px;
+}
+
+.active-page
+{
+  font-weight: bold;
+  &::before
+  {
+    content: "➤ ";
+  }
+}
