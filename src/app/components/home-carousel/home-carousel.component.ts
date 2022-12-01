@@ -12,8 +12,8 @@ export class HomeCarouselComponent implements OnInit {
 
   areImagesReady = true;
   images = [
-    "https://loremflickr.com/1280/720",
-    "https://loremflickr.com/1600/900",
+    "https://loremflickr.com/1180/720",
+    "https://loremflickr.com/1200/900",
     "https://loremflickr.com/1920/1080"
   ]
 

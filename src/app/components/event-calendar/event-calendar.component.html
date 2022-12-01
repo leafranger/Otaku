@@ -1,7 +1,7 @@
 <div class="main">
-  <full-calendar [options]='calendarOptions'></full-calendar>
-  <!-- <button (click)="headLG()">headLG</button>
-  <button (click)="headMD()">headMD</button>
-  <button (click)="headSM()">headSM</button> -->
+
+  <div ngIf="eventsLoaded" *ngFor="let event of events" >
+    Event found!
+  </div>
 
 </div>

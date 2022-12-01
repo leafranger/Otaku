@@ -5,8 +5,15 @@
   width: 100%;
 }
 
+.title
+{
+  padding: 2% 0;
+}
+
 .carousel-image
 {
   width: 100%;
   height: auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
 }

@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { CalendarOptions, defineFullCalendarElement } from '@fullcalendar/web-component';
-import dayGridPlugin from '@fullcalendar/daygrid';
 import { BreakpointsObserverService } from 'src/app/services/breakpoints-observer.service';
 import { Breakpoints } from '@angular/cdk/layout';
-
-// make the <full-calendar> element globally available by calling this function at the top-level
-defineFullCalendarElement();
+import { HttpClient } from '@angular/common/http';
+import { Subscription } from 'rxjs';
+import { EventsList } from '../../interfaces/events-list';
 
 @Component({
   selector: 'app-event-calendar',
@@ -15,38 +13,35 @@ defineFullCalendarElement();
 export class EventCalendarComponent implements OnInit {
 
   constructor(
-    private responsiveService : BreakpointsObserverService
+    private responsiveService : BreakpointsObserverService,
+    private http : HttpClient
   ) { }
 
+  tokenClient: any;
+  gapiInited = false;
+  gisInited = false;
 
+  gcAPIKey = "AIzaSyDbq9jTkz-KyQm-rMG8Igzb1JbDOuWglyc"
+  clientID = "elsword4316@gmail.com"
+  apiURL = `https://www.googleapis.com/calendar/v3/calendars/${this.clientID}/events`
+  events$? : Subscription
+  events : any[] = []
+  eventsLoaded = false
 
-  headerToolbarLgModel = {
-    left: 'prev,next today',
-    center: 'title',
-    right: 'dayGridMonth,dayGridWeek,dayGridDay'
+  fetchEvents()
+  {
+    this.events$ = this.http.get<EventsList>(this.apiURL).subscribe({
+      next:(data) => { this.events = data.items },
+      error:(error) => {console.log(error)},
+      complete:() => { this.eventsLoaded = true},
+    })
   }
-
-  headerToolbarMdModel = {
-    left: 'prev,next',
-    center: 'title',
-    right: 'dayGridMonth,dayGridWeek'
-  }
-
-  headerToolbarSmModel = {
-    left: '',
-    center: 'title',
-    right:''
-  }
-
-  calendarOptions: CalendarOptions = {
-    plugins: [dayGridPlugin],
-    headerToolbar: this.headerToolbarLgModel
-  };
 
   ngOnInit(): void {
 
     this.responsiveService.breakpointObserver$.subscribe(() =>
     this.breakpointChanged());
+    this.fetchEvents();
   }
 
   breakpointChanged()
@@ -55,41 +50,21 @@ export class EventCalendarComponent implements OnInit {
     {
       case this.responsiveService.breakpoint.isMatched(Breakpoints.Large):
       {
-        this.calendarOptions =
-        {
-          ...this.calendarOptions,
-          headerToolbar: this.headerToolbarLgModel,
-          footerToolbar: false
-        }
+
         break;
       }
 
       case this.responsiveService.breakpoint.isMatched(Breakpoints.Tablet):
       case this.responsiveService.breakpoint.isMatched(Breakpoints.Medium):
       {
-        this.calendarOptions =
-        {
-          ...this.calendarOptions,
-          headerToolbar: this.headerToolbarMdModel,
-          footerToolbar: false
-        }
+
         break;
       }
 
       case this.responsiveService.breakpoint.isMatched(Breakpoints.Handset):
       case this.responsiveService.breakpoint.isMatched(Breakpoints.Small):
       {
-        this.calendarOptions =
-        {
-          ...this.calendarOptions,
-          headerToolbar: this.headerToolbarSmModel,
-          footerToolbar:
-          {
-            left: 'prev,next',
-            center: '',
-            right: 'dayGridMonth,dayGridWeek,dayGridDay'
-          }
-        }
+
         break;
       }
     }
