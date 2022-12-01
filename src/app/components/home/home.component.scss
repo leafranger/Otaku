@@ -2,16 +2,20 @@
 
 .main
 {
-  background-color: rgba(32, 32, 32, 0.582);
+
   color: white;
-  max-width: $mobilebreak;
+  width: 100%;
   scroll-behavior: smooth;
 }
 
 .component
 {
+  background-color: $darkblack;
   max-width: $mobilebreak;
   padding: 2% 0;
+  margin: 8% auto;
+  border-radius: $defaultBordRad;
+  box-shadow: -26px 24px 0 -15px $otakugreen, 27px -19px 0 -12px $otakugreen;
 }
 
 
@@ -22,6 +26,11 @@
 
 hr
 {
-  margin: 11% 0;
+  margin: 9% 0;
+  border-color: $otakugreen !important;
 }
 
+.carousel
+{
+  margin-top: 4%;
+}

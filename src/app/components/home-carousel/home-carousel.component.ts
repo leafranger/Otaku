@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { AssetsFolder } from '../../classes/assets-folder';
 
 @Component({
   selector: 'app-home-carousel',
@@ -10,11 +11,12 @@ export class HomeCarouselComponent implements OnInit {
 
   constructor() { }
 
-  areImagesReady = true;
+  path = new AssetsFolder
   images = [
-    "https://loremflickr.com/1180/720",
-    "https://loremflickr.com/1200/900",
-    "https://loremflickr.com/1920/1080"
+    `${this.path.imageFolder}otaku-sala-evento.jpg`,
+    `${this.path.imageFolder}otaku-sala-evento-dnd.jpg`,
+    `${this.path.imageFolder}otaku-marcello-con-doraemon.jpg`,
+    `${this.path.imageFolder}otaku-it-decorazione.jpg`
   ]
 
   ngOnInit(): void {

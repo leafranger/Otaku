@@ -1,15 +1,10 @@
-<div class="main-container">
+<div class="main-container mx-auto">
   <h1 class="text-center title">Otaku! dall'idea all'oggetto</h1>
 
   <carousel class="carousel-container">
-    <slide>
-      <img class="carousel-image" [src]="images[0]" alt="" srcset="" />
-    </slide>
-    <slide>
-      <img class="carousel-image" [src]="images[1]" alt="" srcset="" />
-    </slide>
-    <slide>
-      <img class="carousel-image" [src]="images[2]" alt="" srcset="" />
+    <slide *ngFor="let image of images">
+      <img class="carousel-image" [src]="image" [alt]="image"/>
     </slide>
   </carousel>
+  <h2 class="text-center mt-4">Associazione Culturale Nerd 💚🖤</h2>
 </div>

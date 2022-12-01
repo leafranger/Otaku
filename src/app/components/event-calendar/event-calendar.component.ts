@@ -24,20 +24,20 @@ export class EventCalendarComponent implements OnInit {
   events : any[] = []
   eventsLoaded = false
 
-  fetchEvents()
-  {
-    this.events$ = this.http.get<EventsList>(this.apiURL).subscribe({
-      next:(data) => { this.events = data.items },
-      error:(error) => {console.log(error)},
-      complete:() => { this.eventsLoaded = true},
-    })
-  }
+  // fetchEvents()
+  // {
+  //   this.events$ = this.http.get<EventsList>(this.apiURL).subscribe({
+  //     next:(data) => { this.events = data.items },
+  //     error:(error) => {console.log(error)},
+  //     complete:() => { this.eventsLoaded = true},
+  //   })
+  // }
 
   ngOnInit(): void {
 
     this.responsiveService.breakpointObserver$.subscribe(() =>
     this.breakpointChanged());
-    this.fetchEvents();
+    // this.fetchEvents();
   }
 
   breakpointChanged()

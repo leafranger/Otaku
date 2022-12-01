@@ -2,7 +2,7 @@
 
 .main-container
 {
-  width: 100%;
+  width: 75%;
 }
 
 .title
@@ -16,5 +16,5 @@
   width: 100%;
   height: auto;
   aspect-ratio: 16/9;
-  object-fit: cover;
+  object-fit:fill
 }

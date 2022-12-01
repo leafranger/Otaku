@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AssetsFolder } from 'src/app/classes/assets-folder';
 
 @Component({
   selector: 'app-home-otaku-presentation',
@@ -9,7 +10,9 @@ export class HomeOtakuPresentationComponent implements OnInit {
 
   constructor() { }
 
-  otakuPresentationImage = "https://loremflickr.com/1600/900"
+  path = new AssetsFolder
+
+  otakuPresentationImage = `${this.path.imageFolder}otaku-salottino-con-divano.jpg`
 
 
   ngOnInit(): void {

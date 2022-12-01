@@ -1,7 +1,15 @@
+@import '../../../styles.scss';
+
 img
 {
   width: 75%;
+  margin: 2% 0;
   height: auto;
   aspect-ratio: 4/3;
   object-fit:cover;
+  border-radius: $defaultBordRad;
+  &:hover
+  {
+    width: 77%;
+  }
 }

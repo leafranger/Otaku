@@ -3,14 +3,25 @@
 
 /* Importing Bootstrap SCSS file. */
 
-
+$darkestblack : #202020;
 $darkblack : #242424;
 $lightblack: #2e2e2e;
 $darkgray : #3a3a3a;
 $lightgray : #535353;
+$otakugreen : rgb(40, 177, 40);
 $mobilebreak: 960px;
+$defaultBordRad : 5vw;
 
 body
 {
-  background-color: $darkgray;
+  background-color: $lightblack;
+}
+
+img
+{
+  transition: box-shadow 0.255s, width 0.255s;
+  &:hover
+  {
+    box-shadow: rgba(7, 7, 7, 0.671) 0 4px 13px 2px;
+  }
 }

@@ -2,8 +2,20 @@
 
 .navbar
 {
+  z-index: 2;
   background-color: $darkblack;
   width: 100%;
+  clip-path: polygon(0% 0%, 100% 0%,100% 80%, 99% 100%, 1% 100%, 0% 80%, 0% 0%);
+}
+
+.navborder
+{
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  height: 66px;
+  clip-path: polygon(0% 0%, 100% 0%,100% 89%, 99% 100%, 1% 100%, 0% 89%, 0% 0%);
+  background-color: $otakugreen;
 }
 
 .nav-container
