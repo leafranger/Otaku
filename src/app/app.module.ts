@@ -19,9 +19,12 @@ import { HomeCarouselComponent } from './components/home-carousel/home-carousel.
 import { HomeOtakuPresentationComponent } from './components/home-otaku-presentation/home-otaku-presentation.component';
 import { OtakuGmapsComponent } from './components/otaku-gmaps/otaku-gmaps.component';
 import { EventCalendarComponent } from './components/event-calendar/event-calendar.component';
+import { AboutComponent } from './components/about/about.component';
+import { ContactsComponent } from './components/contacts/contacts.component';
+import { InfoComponent } from './components/info/info.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, HomeComponent, HomeCarouselComponent, HomeOtakuPresentationComponent, OtakuGmapsComponent, EventCalendarComponent],
+  declarations: [AppComponent, HeaderComponent, HomeComponent, HomeCarouselComponent, HomeOtakuPresentationComponent, OtakuGmapsComponent, EventCalendarComponent, AboutComponent, ContactsComponent, InfoComponent],
   imports: [
 
     ButtonModule,
