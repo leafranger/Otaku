@@ -20,10 +20,6 @@ export class EventCalendarComponent implements OnInit {
   tokenClient: any;
   gapiInited = false;
   gisInited = false;
-
-  gcAPIKey = "AIzaSyDbq9jTkz-KyQm-rMG8Igzb1JbDOuWglyc"
-  clientID = "elsword4316@gmail.com"
-  apiURL = `https://www.googleapis.com/calendar/v3/calendars/${this.clientID}/events`
   events$? : Subscription
   events : any[] = []
   eventsLoaded = false
